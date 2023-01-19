@@ -7,17 +7,17 @@ node {
         git(url: 'https://github.com/Mujeeb78/simple-bank-system.git', branch: 'master')
     }
     stage('Build Project') {
-        sh "npm i"
         sh "npm install"
+    }
+    stage("Test") {
+        sh "npm run test"
     }
     stage('SonarQube Analysis'){
           withSonarQubeEnv(credentialsId: 'sonarCred') {
            sh "${sonarScanner}/bin/sonar-scanner -Dsonar.projectKey=simple-bank-system -Dsonar.sources=."
             } 
     }
-    stage("Test") {
-        sh "npm run test"
-    }
+ 
     stage('Building image') {
         script {
           dockerImage = docker.build imagename
