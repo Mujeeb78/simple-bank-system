@@ -3,7 +3,7 @@ This is a basic banking system created using Node.js and MongoDB database.
 
 ## Mongo DB Installation and Setup Instructions
 
-Use below command to deploy a MongoDB Container
+### Use below command to deploy a MongoDB Container
 
 docker run -d --name mongo -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=App123Password -e MONGO_INITDB_DATABASE=bankDB mongo
 
