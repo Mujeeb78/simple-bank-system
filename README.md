@@ -7,11 +7,11 @@ This is a basic banking system created using Node.js and MongoDB database.
 
 docker run -d --name mongo -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=App123Password -e MONGO_INITDB_DATABASE=bankDB mongo
 
-Accessing Mongo DB using below command:
+### Accessing Mongo DB using below command:
 
 docker run -it --link mongo:mongo --rm mongo mongosh --host mongo -u mongoadmin -p App123Password --authenticationDatabase admin bankDB
 
-Use below command to give mongoadmin user access to bankDB
+### Use below command to give mongoadmin user access to bankDB
 
 use admin
 
